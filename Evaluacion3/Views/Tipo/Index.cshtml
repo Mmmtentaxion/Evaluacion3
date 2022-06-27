@@ -1,0 +1,79 @@
+﻿@model CreateTipoModelsView
+
+@{
+    ViewData["Title"] = "Administracion de Lineas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card text-center">
+    <div class="card-header">
+        Administracion de Lineas
+    </div>
+    <div class="card-body">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa-solid fa-users-line me-2"></i>Agregar Nueva Linea
+        </button>
+
+        @*<a asp-action="Create"
+            class="btn btn-outline-primary"><i class="fa-solid fa-users-line me-2"></i>Agregar Nueva Linea</a>*@
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Tipo)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-IdTipo="@item.Id"><i class="fa-solid fa-pen-to-square me-2"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info me-2"></i></a>
+                    <a asp-action="Delete" asp-route-IdTipo="@item.Id"><i class="fa-solid fa-trash me-2"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Linea</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group m-2">
+                            <input asp-for="tipo.Name" class="form-control" placeholder="Nombre de la Linea" />
+                            <span asp-validation-for="tipo.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group m-2">
+                            <input asp-for="tipo.Descripcion" class="form-control" placeholder="Descripcion" />
+                            <span asp-validation-for="tipo.Descripcion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group m-2">
+                            <input type="submit" value="Crear Tipo" class="btn btn-outline-danger col-12" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <div class="row mt-2">
+
+        <div class="col-lg-4">
+            <div class="card p-3">
+                <i class="fa-solid fa-registered" style="font-size:5rem;"></i>
+                <div class="card-body">
+                    <h5 class="card-title">Administracion de Marcas</h5>
+                    <p class="card-text">Crea, Edita o Elimina Marcas en el Sistema para la administracion y gestion de Equipos vehiculos!</p>
+                    <a asp-controller="marca" asp-action="Index"
+                       class="btn btn-outline-danger col-12">Ir a la Administracion</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card p-3">
+                <i class="fa-solid fa-clipboard-list"  style="font-size:5rem;" ></i>
+                <div class="card-body">
+                    <h5 class="card-title">Administracion de Categorias</h5>
+                    <p class="card-text">Crea, Edita o Elimina Categorias en el Sistema para la administracion y gestion de Equipos vehiculos!</p>
+                    <a asp-controller="Categoria" asp-action="Index"
+                       class="btn btn-outline-success col-12">Ir a la Administracion</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card p-3">
+           <i class="fa-solid fa-list-ul" style="font-size:5rem;"></i>
+                <div class="card-body">
+                    <h5 class="card-title">Administracion de Tipos</h5>
+                    <p class="card-text">Crea, Edita o Elimina Tipos en el Sistema para la administracion y gestion de vehiculos!</p>
+                    <a asp-controller="Tipo" asp-action="Index"
+                       class="btn btn-outline-primary col-12">Ir a la Administracion</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row mt-2">
+
+        <div class="col-lg-4">
+            <div class="card p-3">
+               <i class="fa-solid fa-car-rear" style="font-size:5rem;"></i>
+                <div class="card-body">
+                    <h5 class="card-title">Administracion de Caracteristicas</h5>
+                    <p class="card-text">Gestion de caracteristicas del vehiculo</p>
+                    <a asp-controller="caracteristicas" asp-action="Index"
+                       class="btn btn-outline-info col-12">Ir a la Administracion</a>
+                </div>
+            </div>
+        </div>
+       
+        
+
+        <div class="col-lg-4">
+            <div class="card p-3">
+              <i class="fa-solid fa-car" style="font-size:5rem;"></i>
+                <div class="card-body">
+                    <h5 class="card-title">Administracion de Clases</h5>
+                    <p class="card-text">Gestion del tipo de vehiculo</p>
+                    <a asp-controller="Clase" asp-action="Index"
+                       class="btn btn-outline-info col-12">Ir a la Clase</a>
+                </div>
+            </div>
+        </div>
+
+       
+    
